@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 1,
+        "nama": "jojo",
+        "jk": "pria",
+        "password": "$2b$10$w8.JYGmnZeI9uMu.X3b9wOvrauZp0NBeKnXONn31wJg.vZyvEs9oa",
+        "refresh_token": "",
+        "roles": ["admin", "manager", "visitor"]
+    },
+    {
+        "_id": 2,
+        "nama": "giorno",
+        "jk": "pria",
+        "password": "$2b$10$w8.JYGmnZeI9uMu.X3b9wOvrauZp0NBeKnXONn31wJg.vZyvEs9oa",
+        "refresh_token": "",
+        "roles": ["manager", "visitor"]
+    },
+    {
+        "_id": 3,
+        "nama": "jolyne",
+        "jk": "wanita",
+        "password": "$2b$10$w8.JYGmnZeI9uMu.X3b9wOvrauZp0NBeKnXONn31wJg.vZyvEs9oa",
+        "refresh_token": "",
+        "roles": ["visitor"]
+    }
+]

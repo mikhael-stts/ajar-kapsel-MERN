@@ -27,3 +27,8 @@ export const postMovie = async (data) => {
     });
     return response;
 };
+
+export const deleteMovie = async (data) => {
+    const response = await movieApi.delete("/movie/" + data);
+    return response;
+};

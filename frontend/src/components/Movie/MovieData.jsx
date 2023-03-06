@@ -9,18 +9,20 @@ import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { getAllMovie, getAllKategori } from "../../api/movieApi";
 
-const handleDeleteMovie = (event) => {};
-
 const MovieData = (props) => {
     const loaderData = useLoaderData();
     return (
         <div style={{ height: 631, width: "100%" }}>
-            <Form method="delete" action="/admin/movie"></Form>
             <DataGrid
                 rows={loaderData.rows}
                 columns={loaderData.columns}
                 pageSize={10}
                 rowsPerPageOptions={[10, 25, 50, 100]}
+                initialState={{
+                    sorting: {
+                        sortModel: [{ field: "id", sort: "desc" }],
+                    },
+                }}
                 // checkboxSelection
             />
         </div>
@@ -77,15 +79,17 @@ export const loader = async () => {
             flex: 1,
             renderCell: (params) => {
                 return (
-                    <Button
-                        variant="contained"
-                        color="error"
-                        startIcon={<DeleteIcon />}
-                        onClick={handleDeleteMovie}
-                        data-id={params.id}
-                    >
-                        Hapus
-                    </Button>
+                    <Form method="delete" action="/admin/movie">
+                        <input type="hidden" name="id" value={params.id} />
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="error"
+                            startIcon={<DeleteIcon />}
+                        >
+                            Hapus
+                        </Button>
+                    </Form>
                 );
             },
         },

@@ -16,10 +16,9 @@ import {
     Alert,
     AlertTitle,
 } from "@mui/material";
-import { postMovie } from "../../api/movieApi";
+import { deleteMovie, postMovie } from "../../api/movieApi";
 
 const MovieForm = () => {
-    const [Method, setMethod] = useState("POST");
     const data = useActionData();
     const loaderData = useLoaderData();
 
@@ -86,11 +85,11 @@ const MovieForm = () => {
             {data && data.success && (
                 <Alert severity="success">
                     <AlertTitle>Success</AlertTitle>
-                    <strong>Berhasil!</strong> memasukkan data
+                    <strong>Berhasil!</strong> {data.message}
                 </Alert>
             )}
 
-            <Form method={Method} action="/admin/movie">
+            <Form method="post" action="/admin/movie">
                 <TextField
                     label="Nama Movie"
                     variant="outlined"
@@ -155,7 +154,12 @@ const MovieForm = () => {
                     </div>
                 </div>
 
-                <Button type="submit" variant="contained" sx={{ my: 3 }}>
+                <Button
+                    type="submit"
+                    color="success"
+                    variant="contained"
+                    sx={{ my: 3 }}
+                >
                     Insert
                 </Button>
             </Form>
@@ -186,7 +190,12 @@ export const MovieFormAction = async ({ request, params }) => {
             };
 
             await postMovie(input);
-            return { success: true };
+            return { success: true, message: "memasukkan data" };
+        }
+        case "DELETE": {
+            const data = await request.formData();
+            await deleteMovie(data.get("id"));
+            return { success: true, message: "menghapus data" };
         }
         default: {
             throw new Response("", { status: 405 });

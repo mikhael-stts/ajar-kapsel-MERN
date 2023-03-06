@@ -17,7 +17,12 @@
 -   HTML to JSX (kalau males banget)
 -   sisanya silakan research sendiri yaa (misal extension vscode untuk mongodb / redux / dst...)
 
-# FRONTEND
+# Cara Pemakaian
+
+-   git clone dari github / download as zip dan extract
+-   npm install di masing-masing folder (frontend dan backend)
+
+# FRONTEND (seandainya mau coba dari awal banget / create project kosongan)
 
 ## INSTALASI Project menggunakan Vite
 
@@ -56,3 +61,39 @@
     -   npm instal qs
     -   npm instal axios
     -   npm instal react-query
+
+## Setelah instalasi
+
+-   Cobalah untuk mengikuti alur kodingan mulai dari index.html hingga komponen paling dalam
+
+# BACKEND (seandainya mau coba dari awal banget / create project kosongan)
+
+## Install Express
+
+-   Install npm, node, dan express
+
+## Install MongoDB
+
+-   Install mongodb windows community edition dari https://www.mongodb.com/try/download/community
+    -   Untuk cara gampang, install complete saja, lalu tinggal next-next sampai selesai (seharusnya dengan ini sekalian meng-install compass)
+    -   Peringatan, jangan install mongo compass pada step ini, karena super lama (kemungkinan karena mereka download compass di background)
+
+## Install MongoSH
+
+-   Bila ingin menggunakan terminal untuk menggunakan MongoDB, bisa menggunakan mongosh
+-   Install di https://www.mongodb.com/try/download/shell
+-   Setelah install extract ke sebuah folder/lokasi yang kalian mau, lalu daftarkan ke environment variable laptop/komputer kalian
+
+## MongoDB GUI
+
+-   Ada banyak pilihan
+    -   MongoDB Compass gratis, langsung dari developer, katanya tidak terlalu jago
+    -   Robo3T / Studio 3T, katanya sih bagus, ada versi free dan berbayar
+    -   NoSqlBooster support javascript, lebih jago, tapi bayar
+-   Untuk kuliah ini kita akan pakai mongosh dan compass
+
+## Library penunjang backend
+
+-   npm i express
+-   npm i mongoose
+-   npm i cors
